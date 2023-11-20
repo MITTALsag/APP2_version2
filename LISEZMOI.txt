@@ -17,6 +17,24 @@ Tous marche sauf suprise (logique) pour ce qui est des tests mémoires, il n'y a
 Tous les tests performances marchent sauf testpiiile8192000.test qui est trop long 
 cependant en faisant la commande : time  ./main -silent tests/perfs/testpiiile8192000.test il m'affiche un temps qui varie entre 6sec et 9.5 sec donc je ne comprend pas
 
+Complexité :
+L'idée le la structure une fois initialisé est de tous (ou presque faire en O(1)).
+La fonction conversion est en O(n) car elle parcours tous les element du texte une fois et le point qui permet d'opptimiser cela 
+est que quand on croise un groupe de commande on stock son adresse dans un tableau puis des que l'on croise la fin de se meme groupe 
+on prend cette adresse stocke pour modifier le champ fin_groupe pour que le debut de ce groupe pointe vers la fin de son groupe
+Du coup cela permet d'accéder directement a la fin et de ne pas avoir besoin de parcourir tout le groupe a chaque fois que l'on en a besoin
+Comme dans la fonction exec_groupe (pour la commande '!') qui est en O(1) au lieu de O(l) ou l est le nombre d'élement dans le groupe.
+
+Analyse de graphique:
+
+base : on voit que l'orsqu'il n'y a pas de blocle programme tourne en O(n) car temps(linéaire)
+long : pareil pour quand il y a beacoup de bloc (non-imbriqué) ---> O(n)
+nested : de meme quand les bloc sont imbriqué
+memfree : de meme quand on boucle de nombreuse fois
+piiile : De meme pour une pile tres grande 
+
+Donc l'ensemble du programme est en O(n) (linéaire).
+
 
 
 
