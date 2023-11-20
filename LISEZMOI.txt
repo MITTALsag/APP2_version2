@@ -14,6 +14,7 @@ Si vous avez des commentaires, remarques etc. pour le rendu, vous pouvez les
 mettre ici:
 
 Tous marche sauf suprise (logique) pour ce qui est des tests mémoires, il n'y a aycun leaks.
+le test test mysterieuse ne marche pas non plus mais il marche dans la version 1 et je ne l'ai pas faite ici par manque de temps (la commande Z inverse la pile)
 Tous les tests performances marchent sauf testpiiile8192000.test qui est trop long 
 cependant en faisant la commande : time  ./main -silent tests/perfs/testpiiile8192000.test il m'affiche un temps qui varie entre 6sec et 9.5 sec donc je ne comprend pas
 
